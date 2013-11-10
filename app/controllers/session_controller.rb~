@@ -1,13 +1,14 @@
-class AuthenticationPageController < ApplicationController
+class SessionController < ApplicationController
 	
 	def home
 		render 'home'
 	end
 	
-	def signIn
-		user = SchoolUsers.find_by(:email params[:session][:email])
+	def create
+		user = SchoolUsers.find_by(email: params[:session][:email])
 		if user && user.authenticate(params[:session][:password])
 			#Set this user as the current user
+			#How do I redirect properly?  Just to TeacherDashboard#home?
 			if user.isATeacher?
 				#We know it is a teacher so redirect to the teacher dashboard
 			elsif user.isAStudent?
