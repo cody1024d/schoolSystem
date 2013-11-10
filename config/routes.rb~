@@ -1,6 +1,5 @@
 SchoolSystem::Application.routes.draw do
-	root 'authentication_page#home'
-	match '/signin', to: 'authentication_page#home', via: 'get'
+  get "authentication_page/signIn"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

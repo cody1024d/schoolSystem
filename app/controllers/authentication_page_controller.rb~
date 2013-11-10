@@ -1,0 +1,4 @@
+class AuthenticationPageController < ApplicationController
+  def signIn
+  end
+end
