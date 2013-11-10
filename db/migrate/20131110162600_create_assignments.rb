@@ -4,7 +4,7 @@ class CreateAssignments < ActiveRecord::Migration
       t.string :title
       t.string :description
       t.date :dueDate
-      t.active :boolean
+      t.boolean :active
       t.belongs_to :class
       t.timestamps
     end
