@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131110162600) do
+ActiveRecord::Schema.define(version: 20131110203844) do
 
   create_table "assignments", force: true do |t|
     t.string   "title"
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20131110162600) do
   create_table "school_users", force: true do |t|
     t.string   "email"
     t.string   "type"
+    t.text     "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
