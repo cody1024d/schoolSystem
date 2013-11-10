@@ -1,2 +1,2 @@
-module TeacherHelper
+module TeachersHelper
 end

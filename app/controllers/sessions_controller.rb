@@ -8,9 +8,14 @@ class SessionsController < ApplicationController
 		if user && user.authenticate(params[:session][:password])
 			sign_in user
 			if user.isTeacher?
+				teacher = user
 				redirect_to teacher
 			elsif user.isStudent?
+				student = user
 				redirect_to student
+			else
+				render 'new'
+			end
 		else
 			render 'new'
 		end
