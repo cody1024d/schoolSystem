@@ -1,5 +1,7 @@
 SchoolSystem::Application.routes.draw do
 	root 'session#new'
+	resource :teacher, only: [:show]
+	resource :student, only: [:show]
 	resource :session, only: [:new, :create]
 	match '/signin', to: 'session#new', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
