@@ -5,11 +5,14 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <nav>
+  <%= if signed_in? %>
+  <%= link_to "Sign Out", :method => :delete, {:controller => "session", :action => "destroy"} %>
+  </nav>
 </head>
 <body>
-<% if signed_in? %>
-  	<p><%= link_to "Sign Out", signout_path, :method => :delete %></p>
-<% end %>
+
 <%= yield %>
+
 </body>
 </html>

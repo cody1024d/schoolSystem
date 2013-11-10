@@ -1,5 +1,5 @@
 class SchoolClass < ActiveRecord::Base
-	attr_accessible :name
+	attr_accessor :name
 	belongs_to :teacher
 	belongs_to :student
 	has_many :assignments

@@ -1,2 +1,2 @@
-<h1>Teacher#show</h1>
-<p>Find me in app/views/teacher/show.html.erb</p>
+<h1>Teacher Dashboard</h1>
+<p>All the information for the currently logged in teacher!</p>

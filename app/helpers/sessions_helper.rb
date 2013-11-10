@@ -4,11 +4,23 @@ module SessionsHelper
 		self.current_user = user
 	end
 	
+	def signed_in?
+		!self.current_user.nil?
+	end
+	
+	def sign_out
+		current_user = nil
+		session.delete(:session_token)
+	end
+	
+	def current_user
+		@current_user ||= SchoolUser.find_by(id: session[:session_token])
+	end
+	
+	private
 	def current_user=(user)
 		@current_user = user
 	end
 	
-	def current_user
-		@current_user ||= SchoolUser.find_by(id: [:session_token])
-	end
+
 end

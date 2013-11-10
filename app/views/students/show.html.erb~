@@ -1,2 +1,2 @@
-<h1>Student#show</h1>
-<p>Find me in app/views/student/show.html.erb</p>
+<h1>Student Dashboard</h1>
+<p>All the information about a student</p>

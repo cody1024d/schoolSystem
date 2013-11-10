@@ -1,2 +1,13 @@
 <h1>Teacher Dashboard</h1>
-<p>All the information for the currently logged in teacher!</p>
+<p>All the information for the currently logged in teacher, <%= current_user.email %> !<br><br></p>
+
+
+
+
+<ul>
+<%= current_user.schoolClasses.each do |schoolClass| %>
+	<li><%= schoolClass.name %></li>
+<% end %>
+</ul>
+
+<%= button_to "Add Class", {:controller => "classes", :action => "new"}, :method => :get %>

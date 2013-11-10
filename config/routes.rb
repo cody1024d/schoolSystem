@@ -1,8 +1,10 @@
 SchoolSystem::Application.routes.draw do
+	get "classes/new"
 	root 'sessions#new'
-	resources :teachers, only: [:show]
-	resources :students, only: [:show]
-	resources :sessions, only: [:new, :create]
+	resource :teacher, only: [:show]
+	resource :student, only: [:show]
+	resource :sessions, only: [:new, :create, :destroy]
+	match '/signout', to: 'sessions#destroy', via:'delete'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

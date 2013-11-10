@@ -1,23 +1,20 @@
 class SessionsController < ApplicationController
-	
+	skip_before_filter :require_login
 	def new
 	end
 	
 	def create
-		user = SchoolUser.find_by(email: params[:session][:email])
-		if user && user.authenticate(params[:session][:password])
+		user = SchoolUser.find_by(email: params[:sessions][:email])
+		if user && user.authenticate(params[:sessions][:password])
 			sign_in user
-			if user.isTeacher?
-				teacher = user
-				redirect_to teacher
-			elsif user.isStudent?
-				student = user
-				redirect_to student
-			else
-				render 'new'
-			end
+			redirect_to user
 		else
 			render 'new'
 		end
+	end
+	
+	def destroy
+		sign_out
+		redirect_to root_path
 	end
 end
