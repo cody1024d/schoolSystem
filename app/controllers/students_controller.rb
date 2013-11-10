@@ -1,6 +1,5 @@
-class StudentController < ApplicationController
+class StudentsController < ApplicationController
   def show
   	  #Get the currently logged in user, and put him in here
-  	  render 'show'
   end
 end

@@ -1,9 +1,8 @@
 SchoolSystem::Application.routes.draw do
-	root 'session#new'
-	resource :teacher, only: [:show]
-	resource :student, only: [:show]
-	resource :session, only: [:new, :create]
-	match '/signin', to: 'session#new', via: 'get'
+	root 'sessions#new'
+	resources :teachers, only: [:show]
+	resources :students, only: [:show]
+	resources :sessions, only: [:new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
